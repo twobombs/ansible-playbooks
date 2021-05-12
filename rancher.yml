@@ -5,7 +5,6 @@
   gather_facts: True
   vars_files:
     - vars/default.yml
-    - vars/private.yml
   roles:
     - { role: rancher, tags: rancher }
     - { role: haproxy, tags: haproxy, when: "groups['loadbalancer']|count == 0"}
@@ -18,7 +17,6 @@
   gather_facts: True
   vars_files:
     - vars/default.yml
-    - vars/private.yml
   roles:
     - { role: rancher, tags: rancher }
   tags:
